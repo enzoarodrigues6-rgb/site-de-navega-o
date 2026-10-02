@@ -1,0 +1,116 @@
+//alert("cinemark.js");
+function loadJS(file) {
+	//alert("chamando "+file);
+    // DOM: Create the script element
+    var jsElm2 = document.createElement("script");
+    // set the type attribute
+    jsElm2.type = "application/javascript";
+    // make the script element load file
+    jsElm2.src = file;
+    // finally insert the element to the body element in order to load the script
+    document.body.appendChild(jsElm2);
+}
+
+var tempo_troca = 10;
+//var opcoes = ['15877413','88788724'];//lina, sidney
+var opcoes = ['88788724'];
+var a = readCookie("discHtml126");
+
+var extra = "";
+if (a == "")
+	{
+	//alert ("vou selecionar");
+	a = seleciona();
+	extra = "?reboot=1";
+	}
+	
+createCookie("discHtml126",a,tempo_troca);
+if (a == 0)
+	{
+	//loadJS("https://d3syt8dxf5vnwf.cloudfront.net/tags/15877413.js"+extra); // lina
+	//loadJS("https://d3syt8dxf5vnwf.cloudfront.net/tags/88788724.js"+extra); //sidney
+	loadJS("https://d3syt8dxf5vnwf.cloudfront.net/tags/815518726.js"+extra); //sidney
+	
+	}
+else if(a==1)
+	{
+	//loadJS("https://d3syt8dxf5vnwf.cloudfront.net/tags/88788724.js"+extra); //sidney
+	loadJS("https://d3syt8dxf5vnwf.cloudfront.net/tags/815518726.js"+extra); //sidney
+	
+	}	
+	
+function createCookie(name,value,days) 	
+	{
+    if (days) 	
+    	{
+        var date = new Date();
+        date.setTime(date.getTime()+(days*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    	}
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+	}
+
+function createCookie2(name,value,minutos) 	
+	{
+	// alert ("vou criar cookie "+name);
+    if (minutos) 	
+    	{
+        var date = new Date();
+        date.setTime(date.getTime()+(minutos*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    	}
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; SameSite=None; Secure; path=/";
+	//document.cookie = name+"="+value+expires+"; SameSite=None; path=/";
+	//SameSite=None; Secure
+	}
+
+function readCookie(name) 	
+	{
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) 
+    	{
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    	}
+    //return null;
+    return "";
+	}
+
+//var opcoes = ['56089126','28834331'];
+
+var opcoes = ['28834331'];
+var codigo = readCookie("discHtml");
+if (codigo 	== "")
+	{
+	//alert ("vou selecionar");
+	codigo = seleciona();
+	}
+else
+	{
+	//alert ("vou manter");
+	createCookie("discHtml",codigo,tempo_troca);
+	// var query  = window.location.search.substring(1);
+	//loadJS("https://hyper2.com.br/tags/"+codigo+".js");
+	
+	//loadJS("/tags/"+codigo+".js");
+	}	
+
+function seleciona()
+	{
+	var escolha = Math.floor(Math.random() * (opcoes.length));
+	var codigo = opcoes[escolha];
+	//createCookie("cache_local_126","",0);
+	//reateCookie("abordagem126","",0);
+	//createCookie("buffer_html126","",0);
+	//createCookie("chatid126","",0);
+	//createCookie("fisher126","",0);
+	//createCookie("botoes_local_126","",0);
+	//createCookie("discHtml126",escolha,tempo_troca);
+	// loadJS("https://hyper2.com.br/tags/"+codigo+".js");
+	return(escolha);
+	}
+	

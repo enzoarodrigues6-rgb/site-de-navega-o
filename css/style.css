@@ -1,19 +1,26 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     list-style: none;
 }
 
+body {
+    background-color: #333333;
+    color: #f5f5f5;
+}
+
 #container {
-    border: 1px solid red;
+    border-width: 1px;
+    border-style: solid;
+    border-color: red;
     max-width: 1000px;
-    /* Centraçizar o container*/
-    margin: o auto;
+    width: 100%;
+    margin: 0 auto;
 }
 
 nav ul {
     text-align: center;
-    background-color: #333
+    background-color: #333333;
 }
 
 nav ul li {
@@ -22,14 +29,87 @@ nav ul li {
 
 nav ul li a {
     display: block;
-    color: white;
-    /* Tamanho do testo*/
+    color: #ffffff;
     font-size: 22px;
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
     text-decoration: none;
 }
 
 nav ul a:hover {
-    background-color: #555;
+    background-color: #555555;
     color: red;
+}
+h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #f5f5f5;
+    margin-top: 5px;
+}
+
+.content {
+    padding: 16px;
+    text-align: center;
+}
+
+.content h2 {
+    margin-top: 24px;
+    font-size: 24px;
+    color: #f5f5f5;
+}
+
+.content p {
+    margin-top: 12px;
+}
+
+.content table {
+    margin: 16px auto;
+    border-collapse: collapse;
+}
+
+.content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 16px auto;
+}
+
+.filmes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 860px;
+    margin: 24px auto;
+}
+
+.filmes li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    color: #333333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.filmes img:hover {
+    display: block;
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    transform: scale(1.05);
+}
+.filmes img {
+    transition: transform 0.3s ease;
+}
+
+.filmes span {
+    color: #333333;
+    font-weight: bold;
+    text-align: center;
 }
